@@ -72,6 +72,8 @@ In other words, high context emphasizes the meaning of the variable.
 ## Naming methods
 
 ### Action
+Chosing proper action name may grant explicit descriptiveness to your methods. This is a good place to start when thinking about a method name.
+
 #### `get`
 Access data immediately (i.e. shorthand getter of internal data).
 ```js
@@ -86,6 +88,7 @@ function fetchPosts(postCount) {
   return fetch('https://api.dev/posts', { ... });
 }
 ```
+
 #### `set`
 Declaratively set `variableA` with `valueA` to `valueB`.
 ```js
@@ -97,6 +100,7 @@ function Component() {
   }
 }
 ```
+
 #### `reset`
 Set something back to its initial value.
 ```js
@@ -110,6 +114,23 @@ function resetFruits() {
 
 resetFruits(); // fruits === 5
 ```
+
+#### `remove`
+Remove something *from* somewhere. For example, if you have a collection of selected filters on a search page, removing one of them from the collection is `removeFilter`, not `deleteFilter` (and this is how you would naturally say it in English as well):
+```js
+const selectedFilters = ['price', 'availability', 'size'];
+
+function removeFilter(filterName) {
+  const filterIndex = selectedFilters.indexOf(filterName);
+  if (filterIndex !== -1) selectedFilters.splice(filterIndex, 1);
+
+  return selectedFilters;
+}
+```
+
+#### `delete`
+Completely eraze something. For example, when you confirm "Are you sure you want to delete this post?", you perform `deletePost`, not `removePost`.
+
 #### `compose`
 Create new data from the existing one. Probably, applicable mostly to strings.
 ```js
