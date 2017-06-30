@@ -28,10 +28,17 @@ class MenuItem {
 ```
 
 ## Methods
-**Pattern:**
+### Pattern
 ```
-prefix? + action + high context (HC) + low context (LC)
+prefix? + action (A) + high context (HC) + low context (LC)
 ```
+#### Example
+| Name | Prefix | Action | High context | Low context |
+| ---- | ---- | ------ | ------------ | ----------- |
+| `getPost` | | `get` | `Post` |  |
+| `getPostData` | | `get` | `Post` | `Data` |
+| `handleClickOutside` | | `handle` | `Click` | `Outside` |
+| `shouldComponentUpdate` | `should` | `Component` | `Update`| |
 
 ### Actions
 #### `get`
@@ -42,14 +49,14 @@ function getFruitsCount() {
 }
 ```
 #### `fetch`
-Request for variable/data, which takes time (i.e. async request).
+Request for data, which takes time (i.e. async request).
 ```js
 function fetchPosts(postCount) {
   return fetch('https://api.dev/posts', { ... });
 }
 ```
 #### `set`
-Declaratively set `variableA` to next value `valueB`.
+Declaratively set `variableA` with `valueA` to `valueB`.
 ```js
 function Component() {
   this.state = { fruits: 0 };
@@ -60,7 +67,7 @@ function Component() {
 }
 ```
 #### `reset`
-Set something to its initial state/value.
+Set something back to its initial value.
 ```js
 const initialFruits = 5;
 const fruits = initialFruits;
@@ -73,7 +80,7 @@ function resetFruits() {
 resetFruits(); // fruits = 5
 ```
 #### `compose`
-Create new data from existing one.
+Create new data from the existing one. Probably, applicable mostly to strings.
 ```js
 function composePageUrl(pageName, pageId) {
   return `${pageName.toLowerCase()}-${pageId}`;
