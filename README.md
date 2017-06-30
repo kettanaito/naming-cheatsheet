@@ -102,13 +102,13 @@ Set something back to its initial value.
 ```js
 const initialFruits = 5;
 const fruits = initialFruits;
-setFruits(10); // fruits = 10
+setFruits(10); // fruits === 10
 
 function resetFruits() {
   fruits = initialFruits;
 }
 
-resetFruits(); // fruits = 5
+resetFruits(); // fruits === 5
 ```
 #### `compose`
 Create new data from the existing one. Probably, applicable mostly to strings.
