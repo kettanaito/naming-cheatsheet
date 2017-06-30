@@ -8,11 +8,11 @@ Naming things is hard. Is it?
   * **Descriptive**. Name of the variable should reflect what this variable possesses/does in the most efficient way,
   * **Intuitive**. Name of the variable should read naturally, as close to common speach as possible
 ```js
-/* Bad namings */
+/* Bad */
 const a = 5; // "a" could mean anything
 const isPaginatable = (a > 10); // "Paginatable" sounds extremely unnatural
 
-/* Good namings */
+/* Good */
 const postsCount = 5;
 const shouldDisplayPagination = (postsCount > 10);
 ```
@@ -25,6 +25,16 @@ class MenuItem {
   /* This way it reads as MenuItem.handleClick() */
   handleClick = (event) => { ... }
 }
+```
+* Name should reflect expected result:
+```js
+/* Bad */
+const isEnabled = this.props.enabled;
+return (<Button disabled={!isEnabled} />);
+
+/* Good */
+const isDisabled = this.props.disabled;
+return (<Button disabled={isDisabled} />);
 ```
 
 ## Methods
