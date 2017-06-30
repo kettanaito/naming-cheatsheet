@@ -41,6 +41,11 @@ return (<Button disabled={isDisabled} />);
 ```
 prefix? + action (A) + high context (HC) + low context (LC)
 ```
+This is not a rule, but rather a pattern which can be applied quite often when naming variables.
+
+> Keep in mind, that order of the contexts affects the core meaning of a variable. For example, `shouldUpdateComponent` means *you* are about to update a component, while `shouldComponentUpdate` tells you that *component* will update on itself, and you are but controlling whether it should.
+In other words, high context emphasizes the meaning of the variable.
+
 ### Example
 | Name | Prefix | Action | High context | Low context |
 | ---- | ---- | ------ | ------------ | ----------- |
