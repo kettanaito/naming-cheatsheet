@@ -48,7 +48,7 @@ prefix? + action (A) + high context (HC) + low context (LC)
 | `getPost` | | `get` | `Post` |  |
 | `getPostData` | | `get` | `Post` | `Data` |
 | `handleClickOutside` | | `handle` | `Click` | `Outside` |
-| `shouldComponentUpdate` | `should` | `Component` | `Update`| |
+| `shouldDisplayMessage` | `should` | `Display` | `Message`| |
 
 ### Actions
 #### `get`
