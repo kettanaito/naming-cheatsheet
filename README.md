@@ -92,13 +92,13 @@ function fetchPosts(postCount) {
 #### `set`
 Declaratively set `variableA` with `valueA` to `valueB`.
 ```js
-function Component() {
-  this.state = { fruits: 0 };
+const fruits = 0;
 
-  function setFruits(nextFruits) {
-    this.state.fruits = nextFruits;
-  }
+function setFruits(nextFruits) {
+  fruits = nextFruits;
 }
+
+setFruits(5); // fruits === 5
 ```
 
 #### `reset`
