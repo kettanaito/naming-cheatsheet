@@ -37,12 +37,11 @@ const isDisabled = this.props.disabled;
 return (<Button disabled={isDisabled} />);
 ```
 
-## Methods
-### Pattern
+## Pattern
 ```
 prefix? + action (A) + high context (HC) + low context (LC)
 ```
-#### Example
+### Example
 | Name | Prefix | Action | High context | Low context |
 | ---- | ---- | ------ | ------------ | ----------- |
 | `getPost` | | `get` | `Post` |  |
@@ -50,7 +49,9 @@ prefix? + action (A) + high context (HC) + low context (LC)
 | `handleClickOutside` | | `handle` | `Click` | `Outside` |
 | `shouldDisplayMessage` | `should` | `Display` | `Message`| |
 
-### Actions
+## Naming methods
+
+### Action
 #### `get`
 Access data immediately (i.e. shorthand getter of internal data).
 ```js
@@ -108,9 +109,29 @@ function handleLinkClick(event) {
 link.addEventListener('click', handleLinkClick);
 ```
 
-### Prefixes
+## Prefixes
+#### `is`
+Describes certain characteristic of the context.
+```js
+const color = 'blue';
+const isBlue = (color === 'blue');
+
+if (isBlue) {
+  console.log('The color is blue!');
+}
+```
+
+#### `min`/`max`
+Represent minimum or maximum value. Usually describe allowed limits.
+```js
+function PostsList() {
+  this.minPosts = 3;
+  this.maxPosts = 10;
+}
+```
+
 #### `should`
-Prompting computation usually returninng `Boolean` value.
+Reflects conditional statement (returns `Boolean` value).
 ```js
 const currentUrl = 'https://dev.com';
 
