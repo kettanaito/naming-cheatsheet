@@ -16,7 +16,7 @@ const isPaginatable = (a > 10); // "Paginatable" sounds extremely unnatural
 const postsCount = 5;
 const shouldDisplayPagination = (postsCount > 10);
 ```
-* Name should not duplicate the context when the latter is known and when removing the context from name does not decrease the redability:
+* Name should not duplicate the context when the latter is known, and when removing the context from the name does not decrease its readability:
 ```js
 class MenuItem {
   /* Method name duplicates the context it is in "...MenuItem..." */
