@@ -110,14 +110,17 @@ link.addEventListener('click', handleLinkClick);
 ```
 
 ## Prefixes
+Prefixes enhance variables/methods, and serve as a quick indicators of additional meaning behind them.
+
 #### `is`
-Describes certain characteristic of the context.
+Describes certain characteristic or state of the context.
 ```js
 const color = 'blue';
-const isBlue = (color === 'blue');
+const isBlue = (color === 'blue'); // characteristic
+const isRemoved = false; // state
 
-if (isBlue) {
-  console.log('The color is blue!');
+if (isBlue && !isRemoved) {
+  console.log('The color is blue and it is present!');
 }
 ```
 
@@ -128,6 +131,17 @@ function PostsList() {
   this.minPosts = 3;
   this.maxPosts = 10;
 }
+```
+
+#### `has`
+Describes whether current context possesses a certain value or state.
+```js
+/* Bad */
+const isProductsExist = (productsCount > 0);
+const areProductsPresent = (productsCount > 0);
+
+/* Good */
+const hasProducts = (productsCount > 0);
 ```
 
 #### `should`
