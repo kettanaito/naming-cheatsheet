@@ -110,7 +110,7 @@ link.addEventListener('click', handleLinkClick);
 ```
 
 ## Prefixes
-Prefixes enhance variables/methods, and serve as a quick indicators of additional meaning behind them.
+Prefixes enhance variables or methods, indicating additional meaning behind them.
 
 #### `is`
 Describes certain characteristic or state of the context.
