@@ -3,6 +3,19 @@ Naming things is hard. Is it?
 
 ## Guidelines
 * Pick **one** naming convention and follow it. Whether it is `likeThis`, or `like_this`, or anyhow else, it does not matter. What matters is consistency in your work.
+```js
+/* Bad */
+const pages_count = 5;
+const shouldUpdate = true;
+
+/* Good */
+const pagesCount = 5;
+const shouldUpdate = true;
+
+/* Good as well */
+const pages_count = 5;
+const should_update = true;
+```
 * Name, whether of a variable, method, or something else, should be *short*, *descriptive* and *intuitive*:
   * **Short**. Variable should not take long to type, and therefore to remember,
   * **Descriptive**. Name of the variable should reflect what this variable possesses/does in the most efficient way,
@@ -10,12 +23,14 @@ Naming things is hard. Is it?
 ```js
 /* Bad */
 const a = 5; // "a" could mean anything
-const isPaginatable = (a > 10); // "Paginatable" sounds extremely unnatural
+const isPaginatable = (postsCount > 10); // "Paginatable" sounds extremely unnatural
+const shouldPaginatize = (postsCount > 10); // Made up verbs are so much fun!
 
 /* Good */
 const postsCount = 5;
 const shouldDisplayPagination = (postsCount > 10);
 ```
+
 * Name should not duplicate the context when the latter is known, and when removing the context from the name does not decrease its readability:
 ```js
 class MenuItem {
