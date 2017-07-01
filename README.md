@@ -44,11 +44,11 @@ class MenuItem {
 * Name should reflect expected result:
 ```js
 /* Bad */
-const isEnabled = this.props.enabled;
+const isEnabled = (itemsCount > 3);
 return (<Button disabled={!isEnabled} />);
 
 /* Good */
-const isDisabled = this.props.disabled;
+const isDisabled = (itemsCount <= 3);
 return (<Button disabled={isDisabled} />);
 ```
 
