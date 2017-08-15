@@ -1,5 +1,5 @@
 # Naming cheatsheet
-Naming things is hard. Is it?
+Naming things is hard. Let's make it easier.
 
 ## Guidelines
 * Pick **one** naming convention and follow it. Whether it is `likeThis`, or `like_this`, or anyhow else, it does not matter. What matters is consistency in your work.
@@ -78,7 +78,7 @@ Chosing proper action name may grant explicit descriptiveness to your methods. T
 Access data immediately (i.e. shorthand getter of internal data).
 ```js
 function getFruitsCount() {
-  return this.fruits;
+  return this.fruits.length;
 }
 ```
 #### `fetch`
@@ -129,10 +129,10 @@ function removeFilter(filterName) {
 ```
 
 #### `delete`
-Completely eraze something. For example, when you confirm "Are you sure you want to delete this post?", you perform `deletePost`, not `removePost`.
+Completely eraze something from the realms of existance. Imagine you are a blog writer, and you decide to delete one of your posts from the CMS. Once you pressed a shiny "Delete" button you would confirm "Are you sure you want to delete this post?". When you do, you would perform `deletePost` action, not `removePost`.
 
 #### `compose`
-Create new data from the existing one. Probably, applicable mostly to strings.
+Create a new data from the existing one. Probably, applicable mostly to strings.
 ```js
 function composePageUrl(pageName, pageId) {
   return `${pageName.toLowerCase()}-${pageId}`;
@@ -154,7 +154,7 @@ link.addEventListener('click', handleLinkClick);
 Prefixes enhance variables or methods, indicating additional meaning behind them.
 
 #### `is`
-Describes certain characteristic or state of the context.
+Describes certain characteristic or state of the current context.
 ```js
 const color = 'blue';
 const isBlue = (color === 'blue'); // characteristic
@@ -166,7 +166,7 @@ if (isBlue && !isRemoved) {
 ```
 
 #### `min`/`max`
-Represent minimum or maximum value. Usually describe allowed limits.
+Represent minimum or maximum value. Handy when describing boundaries or allowed limits.
 ```js
 function PostsList() {
   this.minPosts = 3;
