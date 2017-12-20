@@ -40,14 +40,14 @@ const shouldDisplayPagination = (postsCount > 10);
 * Name should not duplicate the context when the latter is known, and when removing the context from the name does not decrease its readability:
 ```js
 class MenuItem {
-  /* Method name duplicates the context it is in "...MenuItem..." */
+  /* Method name duplicates the context it is in (which is "MenuItem") */
   handleMenuItemClick = (event) => { ... }
   
   /* This way it reads as MenuItem.handleClick() */
   handleClick = (event) => { ... }
 }
 ```
-* Name should reflect expected result:
+* Name should reflect the expected result:
 ```js
 /* Bad */
 const isEnabled = (itemsCount > 3);
@@ -60,12 +60,10 @@ return (<Button disabled={isDisabled} />);
 
 ## Pattern
 ```
-prefix? + action (A) + high context (HC) + low context (LC)
+prefix? + action (A) + high context (HC) + low context? (LC)
 ```
-This is not a rule, but rather a pattern which can be applied quite often when naming variables.
 
-> Keep in mind, that order of the contexts affects the core meaning of a variable. For example, `shouldUpdateComponent` means *you* are about to update a component, while `shouldComponentUpdate` tells you that *component* will update on itself, and you are but controlling whether it should.
-In other words, high context emphasizes the meaning of the variable.
+This is not a rule, but rather a useful pattern for naming the variables.
 
 ### Example
 | Name | Prefix | Action | High context | Low context |
@@ -75,20 +73,21 @@ In other words, high context emphasizes the meaning of the variable.
 | `handleClickOutside` | | `handle` | `Click` | `Outside` |
 | `shouldDisplayMessage` | `should` | `Display` | `Message`| |
 
-## Naming methods
+> Keep in mind, that order of the contexts affects the core meaning of a variable. For example, `shouldUpdateComponent` means *you* are about to update a component, while `shouldComponentUpdate` tells you that *component* will update on itself, and you are but controlling whether it should.
+In other words, high context emphasizes the meaning of the variable.
 
-### Action
+## Actions
 Chosing proper action name may grant explicit descriptiveness to your methods. This is a good place to start when thinking about a method name.
 
 #### `get`
-Access data immediately (i.e. shorthand getter of internal data).
+Accesses data immediately (i.e. shorthand getter of internal data).
 ```js
 function getFruitsCount() {
   return this.fruits.length;
 }
 ```
 #### `fetch`
-Request for data, which takes time (i.e. async request).
+Requests for a data, which takes time (i.e. async request).
 ```js
 function fetchPosts(postCount) {
   return fetch('https://api.dev/posts', { ... });
@@ -96,7 +95,7 @@ function fetchPosts(postCount) {
 ```
 
 #### `set`
-Declaratively set `variableA` with `valueA` to `valueB`.
+Declaratively sets a variable with `valueA` to `valueB`.
 ```js
 const fruits = 0;
 
@@ -108,7 +107,7 @@ setFruits(5); // fruits === 5
 ```
 
 #### `reset`
-Set something back to its initial value.
+Sets something back to its initial value.
 ```js
 const initialFruits = 5;
 const fruits = initialFruits;
@@ -122,7 +121,7 @@ resetFruits(); // fruits === 5
 ```
 
 #### `remove`
-Remove something *from* somewhere. For example, if you have a collection of selected filters on a search page, removing one of them from the collection is `removeFilter`, not `deleteFilter` (and this is how you would naturally say it in English as well):
+Removes something *from* somewhere. For example, if you have a collection of selected filters on a search page, removing one of them from the collection is `removeFilter`, not `deleteFilter` (and this is how you would naturally say it in English as well):
 ```js
 const selectedFilters = ['price', 'availability', 'size'];
 
@@ -135,10 +134,15 @@ function removeFilter(filterName) {
 ```
 
 #### `delete`
-Completely eraze something from the realms of existance. Imagine you are a blog writer, and you decide to delete one of your posts from the CMS. Once you pressed a shiny "Delete" button you would confirm "Are you sure you want to delete this post?". When you do, you would perform `deletePost` action, not `removePost`.
+Completely erazes something from the realms of existance. Imagine you are a blog writer, and you decide to delete one of your posts from the CMS. Once you pressed a shiny "Delete" button you would confirm "Are you sure you want to delete this post?". When you do, you would perform `deletePost` action, not `removePost`.
+```js
+function deletePost(id) {
+ const 
+}
+```
 
 #### `compose`
-Create a new data from the existing one. Probably, applicable mostly to strings.
+Creates a new data from the existing one. Applicable mostly to strings or objects.
 ```js
 function composePageUrl(pageName, pageId) {
   return `${pageName.toLowerCase()}-${pageId}`;
@@ -146,7 +150,7 @@ function composePageUrl(pageName, pageId) {
 ```
 
 #### `handle`
-Handler for a dedicated action. Usually, used as a callback method.
+Handles a dedicated action. Often used in naming the callback methods.
 ```js
 function handleLinkClick(event) {
   event.preventDefault();
@@ -157,16 +161,16 @@ link.addEventListener('click', handleLinkClick);
 ```
 
 ## Prefixes
-Prefixes enhance variables or methods, indicating additional meaning behind them.
+Prefixes enhance variables and methods, indicating an additional meaning behind them.
 
 #### `is`
-Describes certain characteristic or state of the current context.
+Describes certain characteristic or state of the current context (returns `Boolean`).
 ```js
 const color = 'blue';
 const isBlue = (color === 'blue'); // characteristic
-const isRemoved = false; // state
+const isPresent = true; // state
 
-if (isBlue && !isRemoved) {
+if (isBlue && isPresent) {
   console.log('The color is blue and it is present!');
 }
 ```
@@ -181,7 +185,7 @@ function PostsList() {
 ```
 
 #### `has`
-Describes whether current context possesses a certain value or state.
+Describes whether the current context possesses a certain value or state.
 ```js
 /* Bad */
 const isProductsExist = (productsCount > 0);
@@ -192,11 +196,24 @@ const hasProducts = (productsCount > 0);
 ```
 
 #### `should`
-Reflects conditional statement (returns `Boolean` value).
+Reflects a conditional statement (returns `Boolean`) tightly coupled with a certain action.
 ```js
 const currentUrl = 'https://dev.com';
 
 function shouldUpdateUrl(url) {
   return (url !== currentUrl);
+}
+```
+
+#### `prev`/`next`
+Indicate the previous and next state of the variable in the current context. Useful for descriptive representation of any kind of the state mutation.
+```jsx
+function fetchPosts() {
+ const prevPosts = this.state.posts;
+ 
+ const fetchedPosts = fetch('...');
+ const nextPosts = prevPosts.merge(fetchedPosts);
+
+ return this.setState({ posts: nextPosts });
 }
 ```
