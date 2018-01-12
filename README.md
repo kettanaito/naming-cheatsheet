@@ -7,6 +7,25 @@
 # Naming cheatsheet
 Naming things is hard. Let's make it easier.
 
+## Summary
+* [Guidelines](#guidelines)
+* [HC/LC Pattern](#hclc-pattern)
+* **[Actions](#actions)**
+  * [get](#get)
+  * [fetch](#fetch)
+  * [set](#set)
+  * [reset](#reset)
+  * [remove](#remove)
+  * [delete](#delete)
+  * [compose](#compose)
+  * [handle](#handle)
+* **[Prefixes](#prefixes)**
+  * [is](#is)
+  * [has](#has)
+  * [should](#should)
+  * [min/max](#minmax)
+  * [prev/next](#prevnext)
+
 ## Guidelines
 * Pick **one** naming convention and follow it. Whether it is `likeThis`, or `like_this`, or anyhow else, it does not matter. What matters is consistency in your work.
 
@@ -196,16 +215,6 @@ if (isBlue && isPresent) {
 }
 ```
 
-#### `min`/`max`
-Represent minimum or maximum value. Handy when describing boundaries or allowed limits.
-
-```js
-function PostsList() {
-  this.minPosts = 3;
-  this.maxPosts = 10;
-}
-```
-
 #### `has`
 Describes whether the current context possesses a certain value or state.
 
@@ -226,6 +235,16 @@ const currentUrl = 'https://dev.com';
 
 function shouldUpdateUrl(url) {
   return (url !== currentUrl);
+}
+```
+
+#### `min`/`max`
+Represent minimum or maximum value. Handy when describing boundaries or allowed limits.
+
+```js
+function PostsList() {
+  this.minPosts = 3;
+  this.maxPosts = 10;
 }
 ```
 
