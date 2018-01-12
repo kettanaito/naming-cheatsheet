@@ -7,6 +7,8 @@
 # Naming cheatsheet
 Naming things is hard. Let's make it easier.
 
+The purpose of this document is to break down and systematize the concepts and patterns commonly used for variable naming. Beware that *variable* in this document refers to variables, methods, and generally anything created during your programming work.
+
 ## Summary
 * [Guidelines](#guidelines)
 * [HC/LC Pattern](#hclc-pattern)
