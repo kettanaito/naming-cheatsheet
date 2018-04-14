@@ -61,7 +61,17 @@ const postsCount = 5;
 const shouldDisplayPagination = (postsCount > 10);
 ```
 
-* Name should not duplicate the context when the latter is known, and when removing the context from the name does not decrease its readability:
+* Do *not* use contractions. The latter contribute to nothing but decreased code readability. Finding a short, descriptive name may be hard, but don't think contractions help you in any way.
+
+```js
+/* Bad */
+const onItmClck = () => {};
+
+/* Good */
+const onItemClick = () => {};
+```
+
+* Name should not duplicate the context when the latter is known, and when removing the context does not decrease the name's readability:
 
 ```js
 class MenuItem {
@@ -122,7 +132,7 @@ function fetchPosts(postCount) {
 ```
 
 #### `set`
-Declaratively sets a variable with `valueA` to `valueB`.
+Declaratively sets a variable with value` A` to value `B`.
 
 ```js
 const fruits = 0;
@@ -136,7 +146,7 @@ console.log(fruits) // 5
 ```
 
 #### `reset`
-Sets something back to its initial value or state.
+Sets a variable back to its initial value or state.
 
 ```js
 const initialFruits = 5;
@@ -153,7 +163,9 @@ console.log(fruits); // 5
 ```
 
 #### `remove`
-Removes something *from* somewhere. For example, if you have a collection of selected filters on a search page, removing one of them from the collection is `removeFilter`, **not** `deleteFilter` (and this is how you would naturally say it in English as well):
+Removes something *from* somewhere.
+
+For example, if you have a collection of selected filters on a search page, removing one of them from the collection is `removeFilter`, **not** `deleteFilter` (and this is how you would naturally say it in English as well):
 
 ```js
 const selectedFilters = ['price', 'availability', 'size'];
@@ -181,7 +193,7 @@ function deletePost(id) {
 ```
 
 #### `compose`
-Creates a new data from the existing one. Applicable mostly to strings or objects.
+Creates a new data from the existing one. Mostly applicable to strings or objects.
 
 ```js
 function composePageUrl(pageName, pageId) {
@@ -241,7 +253,7 @@ function shouldUpdateUrl(url) {
 ```
 
 #### `min`/`max`
-Represent minimum or maximum value. Handy when describing boundaries or allowed limits.
+Represent minimum or maximum value. Useful for describing boundaries or allowed limits.
 
 ```js
 function PostsList() {
@@ -251,7 +263,7 @@ function PostsList() {
 ```
 
 #### `prev`/`next`
-Indicate the previous and the next state of the variable in the current context. Useful for describing a state mutation.
+Indicate the previous and the next state of a variable in the current context. Useful for describing a state transition.
 
 ```jsx
 function fetchPosts() {
