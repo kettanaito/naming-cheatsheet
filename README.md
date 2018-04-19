@@ -132,7 +132,7 @@ function fetchPosts(postCount) {
 ```
 
 #### `set`
-Declaratively sets a variable with value` A` to value `B`.
+Declaratively sets a variable with value `A` to value `B`.
 
 ```js
 const fruits = 0;
@@ -230,7 +230,7 @@ if (isBlue && isPresent) {
 ```
 
 #### `has`
-Describes whether the current context possesses a certain value or state.
+Describes whether the current context possesses a certain value or state (returns `Boolean`).
 
 ```js
 /* Bad */
@@ -263,7 +263,7 @@ function PostsList() {
 ```
 
 #### `prev`/`next`
-Indicate the previous and the next state of a variable in the current context. Useful for describing a state transition.
+Indicate the previous and the next state of a variable in the current context. Useful for describing state transitions.
 
 ```jsx
 function fetchPosts() {
