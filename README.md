@@ -7,16 +7,16 @@
 # Naming cheatsheet
 Naming things is hard. Let's make it easier.
 
-The purpose of this document is to break down and systematize the concepts and patterns commonly used for variable naming. Beware that *variable* in this document refers to variables, methods, and generally anything created during your programming work.
+This document contains systematized concepts and patterns often used when naming variables.
 
 ## Summary
 * [Guidelines](#guidelines)
 * [HC/LC Pattern](#hclc-pattern)
 * **[Actions](#actions)**
   * [get](#get)
-  * [fetch](#fetch)
   * [set](#set)
   * [reset](#reset)
+  * [fetch](#fetch)
   * [remove](#remove)
   * [delete](#delete)
   * [compose](#compose)
@@ -29,7 +29,7 @@ The purpose of this document is to break down and systematize the concepts and p
   * [prev/next](#prevnext)
 
 ## Guidelines
-* Pick **one** naming convention and follow it. Whether it is `likeThis`, or `like_this`, or anyhow else, it does not matter. What matters is consistency in your work.
+* Pick **one** naming convention and follow it. Whether it is `likeThis`, or `like_this`, or anyhow else, it does not matter. What matters is consistency in your code.
 
 ```js
 /* Bad */
@@ -94,6 +94,8 @@ const isDisabled = (itemsCount <= 3);
 return (<Button disabled={isDisabled} />);
 ```
 
+---
+
 ## HC/LC Pattern
 There is a useful pattern you may follow when naming your methods:
 
@@ -113,6 +115,8 @@ To illustrate, take a look at how this pattern may be applied in the table below
 > **Note:** The order of the contexts affects the core meaning of a method. For example, `shouldUpdateComponent` means *you* are about to update a component, while `shouldComponentUpdate` tells you that *component* will update on itself, and you are but controlling whether it should do that right now.
 In other words, **high context emphasizes the meaning of the variable**.
 
+---
+
 ## Actions
 Chosing a proper action name may grant explicit descriptiveness to your methods. This is a good place to start when naming your methods.
 
@@ -121,13 +125,6 @@ Accesses data immediately (i.e. shorthand getter of internal data).
 ```js
 function getFruitsCount() {
   return this.fruits.length;
-}
-```
-#### `fetch`
-Requests for a data, which takes time (i.e. async request).
-```js
-function fetchPosts(postCount) {
-  return fetch('https://api.dev/posts', { ... });
 }
 ```
 
@@ -160,6 +157,14 @@ function resetFruits() {
 
 resetFruits();
 console.log(fruits); // 5
+```
+
+#### `fetch`
+Requests for a data, which takes time (i.e. async request).
+```js
+function fetchPosts(postCount) {
+  return fetch('https://api.dev/posts', { ... });
+}
 ```
 
 #### `remove`
@@ -213,8 +218,10 @@ function handleLinkClick(event) {
 link.addEventListener('click', handleLinkClick);
 ```
 
+---
+
 ## Prefixes
-Prefixes enhance variables and methods, indicating an additional meaning behind them.
+Prefixes act as enhancers, indicating additional meaning behind variables.
 
 #### `is`
 Describes certain characteristic or state of the current context (returns `Boolean`).
