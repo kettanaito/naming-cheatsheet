@@ -113,7 +113,7 @@ In other words, **high context emphasizes the meaning of a variable**.
 
 The verb part of your function name. The most important part responsible for describing what the function *does*.
 
-#### `get`
+### `get`
 Accesses data immediately (i.e. shorthand getter of internal data).
 ```js
 function getFruitsCount() {
@@ -121,7 +121,7 @@ function getFruitsCount() {
 }
 ```
 
-#### `set`
+### `set`
 Declaratively sets a variable with value `A` to value `B`.
 
 ```js
@@ -135,7 +135,7 @@ setFruits(5)
 console.log(fruits) // 5
 ```
 
-#### `reset`
+### `reset`
 Sets a variable back to its initial value or state.
 
 ```js
@@ -152,7 +152,7 @@ resetFruits()
 console.log(fruits) // 5
 ```
 
-#### `fetch`
+### `fetch`
 Requests for a data, which takes time (i.e. async request).
 ```js
 function fetchPosts(postCount) {
@@ -160,7 +160,7 @@ function fetchPosts(postCount) {
 }
 ```
 
-#### `remove`
+### `remove`
 Removes something *from* somewhere.
 
 For example, if you have a collection of selected filters on a search page, removing one of them from the collection is `removeFilter`, **not** `deleteFilter` (and this is how you would naturally say it in English as well):
@@ -179,7 +179,7 @@ function removeFilter(filterName) {
 }
 ```
 
-#### `delete`
+### `delete`
 Completely erazes something from the realms of existance.
 
 Imagine you are a content editor, and there is that notorious post you wish to get rid of. Once you clicked a shiny "Delete post" button, the CMS performed a `deletePost` action, **not** `removePost`.
@@ -190,7 +190,7 @@ function deletePost(id) {
 }
 ```
 
-#### `compose`
+### `compose`
 Creates a new data from the existing one. Mostly applicable to strings or objects.
 
 ```js
@@ -199,7 +199,7 @@ function composePageUrl(pageName, pageId) {
 }
 ```
 
-#### `handle`
+### `handle`
 Handles a dedicated action. Often used in naming the callback methods.
 
 ```js
