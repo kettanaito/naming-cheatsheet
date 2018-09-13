@@ -41,7 +41,8 @@ const shouldPaginatize = (postsCount > 10) // Made up verbs are so much fun!
 
 /* Good */
 const postsCount = 5
-const shouldDisplayPagination = (postsCount > 10)
+const hasPagination = (postsCount > 10)
+const shouldDisplayPagination = (postsCount > 10) // alternatively
 ```
 
 ## Avoid contractions
@@ -216,6 +217,22 @@ link.addEventListener('click', handleLinkClick)
 ## Context
 
 A domain that a function operates on.
+
+A function is often an action on *something*. It is important to state what is its operable domain, or at least an expected data type.
+
+```js
+/* A pure function operating with primitives */
+function filter(predicate, list) {
+  return list.filter(predicate)
+}
+
+/* Function operating exactly on posts */
+function getRecentPosts(posts) {
+  return filter(posts, (post) => post.date === Date.now())
+}
+```
+
+> Note that language-specific assumptions may allow to ommit the context in some cases. For example, in JavaScript it is common that `filter` operates on Array. Adding explicit `filterArray` would be unnecessary.
 
 ---
 
