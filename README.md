@@ -122,6 +122,8 @@ function getFruitsCount() {
 }
 ```
 
+> See also [compose](#compose).
+
 ### `set`
 Declaratively sets a variable with value `A` to value `B`.
 
@@ -157,7 +159,7 @@ console.log(fruits) // 5
 Requests for a data, which takes time (i.e. async request).
 ```js
 function fetchPosts(postCount) {
-  return fetch('https://api.dev/posts', { ... })
+  return fetch('https://api.dev/posts', {...})
 }
 ```
 
@@ -167,18 +169,15 @@ Removes something *from* somewhere.
 For example, if you have a collection of selected filters on a search page, removing one of them from the collection is `removeFilter`, **not** `deleteFilter` (and this is how you would naturally say it in English as well):
 
 ```js
-const selectedFilters = ['price', 'availability', 'size']
-
-function removeFilter(filterName) {
-  const filterIndex = selectedFilters.indexOf(filterName)
-
-  if (filterIndex !== -1) {
-    selectedFilters.splice(filterIndex, 1)
-  }
-
-  return selectedFilters
+function removeFilter(filterName, filters) {
+  return filters.filter(name => name !== filterName)
 }
+
+const selectedFilters = ['price', 'availability', 'size']
+removeFilter('price', selectedFilters)
 ```
+
+> See also [delete](#delete).
 
 ### `delete`
 Completely erazes something from the realms of existance.
@@ -191,6 +190,8 @@ function deletePost(id) {
 }
 ```
 
+> See also [remove](#remove).
+
 ### `compose`
 Creates a new data from the existing one. Mostly applicable to strings or objects.
 
@@ -199,6 +200,8 @@ function composePageUrl(pageName, pageId) {
   return `${pageName.toLowerCase()}-${pageId}`
 }
 ```
+
+> See also [get](#get).
 
 ### `handle`
 Handles a dedicated action. Often used in naming the callback methods.
