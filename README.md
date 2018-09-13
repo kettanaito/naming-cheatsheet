@@ -5,99 +5,91 @@
 </p>
 
 # Naming cheatsheet
-Naming things is hard. Let's make it easier.
+Naming things is hard. This sheet attempts to make it easier.
 
-This document contains systematized concepts and patterns often used when naming variables.
+Although these suggestions can be applied to any programming language, I will use JavaScript to illustrate them in practice.
 
-## Summary
-* [Guidelines](#guidelines)
-* [HC/LC Pattern](#hclc-pattern)
-* **[Actions](#actions)**
-  * [get](#get)
-  * [set](#set)
-  * [reset](#reset)
-  * [fetch](#fetch)
-  * [remove](#remove)
-  * [delete](#delete)
-  * [compose](#compose)
-  * [handle](#handle)
-* **[Prefixes](#prefixes)**
-  * [is](#is)
-  * [has](#has)
-  * [should](#should)
-  * [min/max](#minmax)
-  * [prev/next](#prevnext)
-
-## Guidelines
-* Pick **one** naming convention and follow it. Whether it is `likeThis`, or `like_this`, or anyhow else, it does not matter. What matters is consistency in your code.
+## Naming convention
+Pick **one** naming convention and follow it. It may be `likeThis`, or `like_this`, or anyhow else, it does not matter. What matters is for it to remain consistent.
 
 ```js
 /* Bad */
-const pages_count = 5;
-const shouldUpdate = true;
+const pages_count = 5
+const shouldUpdate = true
 
 /* Good */
-const pagesCount = 5;
-const shouldUpdate = true;
+const pagesCount = 5
+const shouldUpdate = true
 
 /* Good as well */
-const pages_count = 5;
-const should_update = true;
+const pages_count = 5
+const should_update = true
 ```
 
-* Name, whether of a variable, method, or something else, should be *short*, *descriptive* and *intuitive*:
-  * **Short**. Variable should not take long to type and, therefore, to remember,
-  * **Descriptive**. Name of the variable should reflect what it does/possesses in the most efficient way,
-  * **Intuitive**. Name of the variable should read naturally, as close to the common speach as possible
+## S-I-D
+
+A name must be *short*, *intuitive* and *descriptive*:
+  * **Short**. A name must not take long to type and, therefore, to remember,
+  * **Intuitive**. Name must read naturally, as close to the common speach as possible
+  * **Descriptive**. Name must reflect what it does/possesses in the most efficient way,
 
 ```js
 /* Bad */
-const a = 5; // "a" could mean anything
-const isPaginatable = (postsCount > 10); // "Paginatable" sounds extremely unnatural
-const shouldPaginatize = (postsCount > 10); // Made up verbs are so much fun!
+const a = 5 // "a" could mean anything
+const isPaginatable = (postsCount > 10) // "Paginatable" sounds extremely unnatural
+const shouldPaginatize = (postsCount > 10) // Made up verbs are so much fun!
 
 /* Good */
-const postsCount = 5;
-const shouldDisplayPagination = (postsCount > 10);
+const postsCount = 5
+const shouldDisplayPagination = (postsCount > 10)
 ```
 
-* Do *not* use contractions. The latter contribute to nothing but decreased code readability. Finding a short, descriptive name may be hard, but don't think contractions help you in any way.
+## Avoid contractions
+
+Do **not** use contractions. They contribute to nothing but decreased readability of your code. Finding a short, descriptive name may be hard, but contraction is not an excude to not doing so.
 
 ```js
 /* Bad */
-const onItmClck = () => {};
+const onItmClk = () => {}
 
 /* Good */
-const onItemClick = () => {};
+const onItemClick = () => {}
 ```
 
-* Name should not duplicate the context when the latter is known, and when removing the context does not decrease the name's readability:
+## Avoid context duplication
+
+A name should not duplicate the context in which it is defined. Always remove the context from a name if that doesn't decrease its readability.
 
 ```js
 class MenuItem {
-  /* Method name duplicates the context it is in (which is "MenuItem") */
+  /* Method name duplicates the context (which is "MenuItem") */
   handleMenuItemClick = (event) => { ... }
   
-  /* This way it reads as MenuItem.handleClick() */
+  /* Reads nicely as `MenuItem.handleClick()` */
   handleClick = (event) => { ... }
 }
 ```
-* Name should reflect the expected result:
 
-```js
+## Reflect expected result
+
+A name should reflect the expected result.
+
+```jsx
 /* Bad */
-const isEnabled = (itemsCount > 3);
-return (<Button disabled={!isEnabled} />);
+const isEnabled = (itemsCount > 3)
+return <Button disabled={!isEnabled} />
 
 /* Good */
-const isDisabled = (itemsCount <= 3);
-return (<Button disabled={isDisabled} />);
+const isDisabled = (itemsCount <= 3)
+return <Button disabled={isDisabled} />)
 ```
 
 ---
 
-## HC/LC Pattern
-There is a useful pattern you may follow when naming your methods:
+# Naming functions
+
+## A/HC/LC Pattern
+There is a useful pattern to follow when naming functions:
 
 ```
 prefix? + action (A) + high context (HC) + low context? (LC)
@@ -112,13 +104,14 @@ To illustrate, take a look at how this pattern may be applied in the table below
 | `handleClickOutside` | | `handle` | `Click` | `Outside` |
 | `shouldDisplayMessage` | `should` | `Display` | `Message`| |
 
-> **Note:** The order of the contexts affects the core meaning of a method. For example, `shouldUpdateComponent` means *you* are about to update a component, while `shouldComponentUpdate` tells you that *component* will update on itself, and you are but controlling whether it should do that right now.
-In other words, **high context emphasizes the meaning of the variable**.
+> **Note:** Context order affects the meaning of a method. For example, `shouldUpdateComponent` means *you* are about to update a component, while `shouldComponentUpdate` tells you that *component* will update on itself, and you are but controlling whether it should do that right now.
+In other words, **high context emphasizes the meaning of a variable**.
 
 ---
 
 ## Actions
-Chosing a proper action name may grant explicit descriptiveness to your methods. This is a good place to start when naming your methods.
+
+The verb part of your function name. The most important part responsible for describing what the function *does*.
 
 #### `get`
 Accesses data immediately (i.e. shorthand getter of internal data).
@@ -132,13 +125,13 @@ function getFruitsCount() {
 Declaratively sets a variable with value `A` to value `B`.
 
 ```js
-const fruits = 0;
+const fruits = 0
 
 function setFruits(nextFruits) {
-  fruits = nextFruits;
+  fruits = nextFruits
 }
 
-setFruits(5);
+setFruits(5)
 console.log(fruits) // 5
 ```
 
@@ -146,24 +139,24 @@ console.log(fruits) // 5
 Sets a variable back to its initial value or state.
 
 ```js
-const initialFruits = 5;
-const fruits = initialFruits;
-setFruits(10);
-console.log(fruits); // 10
+const initialFruits = 5
+const fruits = initialFruits
+setFruits(10)
+console.log(fruits) // 10
 
 function resetFruits() {
-  fruits = initialFruits;
+  fruits = initialFruits
 }
 
-resetFruits();
-console.log(fruits); // 5
+resetFruits()
+console.log(fruits) // 5
 ```
 
 #### `fetch`
 Requests for a data, which takes time (i.e. async request).
 ```js
 function fetchPosts(postCount) {
-  return fetch('https://api.dev/posts', { ... });
+  return fetch('https://api.dev/posts', { ... })
 }
 ```
 
@@ -173,16 +166,16 @@ Removes something *from* somewhere.
 For example, if you have a collection of selected filters on a search page, removing one of them from the collection is `removeFilter`, **not** `deleteFilter` (and this is how you would naturally say it in English as well):
 
 ```js
-const selectedFilters = ['price', 'availability', 'size'];
+const selectedFilters = ['price', 'availability', 'size']
 
 function removeFilter(filterName) {
-  const filterIndex = selectedFilters.indexOf(filterName);
+  const filterIndex = selectedFilters.indexOf(filterName)
 
   if (filterIndex !== -1) {
-    selectedFilters.splice(filterIndex, 1);
+    selectedFilters.splice(filterIndex, 1)
   }
 
-  return selectedFilters;
+  return selectedFilters
 }
 ```
 
@@ -193,7 +186,7 @@ Imagine you are a content editor, and there is that notorious post you wish to g
 
 ```js
 function deletePost(id) {
- return database.find({ id }).delete();
+ return database.find({ id }).delete()
 }
 ```
 
@@ -202,7 +195,7 @@ Creates a new data from the existing one. Mostly applicable to strings or object
 
 ```js
 function composePageUrl(pageName, pageId) {
-  return `${pageName.toLowerCase()}-${pageId}`;
+  return `${pageName.toLowerCase()}-${pageId}`
 }
 ```
 
@@ -211,74 +204,79 @@ Handles a dedicated action. Often used in naming the callback methods.
 
 ```js
 function handleLinkClick(event) {
-  event.preventDefault();
-  console.log('Clicked a link!');
+  event.preventDefault()
+  console.log('Clicked a link!')
 }
 
-link.addEventListener('click', handleLinkClick);
+link.addEventListener('click', handleLinkClick)
 ```
 
 ---
 
-## Prefixes
-Prefixes act as enhancers, indicating additional meaning behind variables.
+## Context
 
-#### `is`
-Describes certain characteristic or state of the current context (returns `Boolean`).
+A domain that a function operates on.
+
+---
+
+## Prefixes
+
+Prefix enhances the meaning of a variable.
+
+### `is`
+Describes certain characteristic or state of the current context (returns `boolean`).
 
 ```js
-const color = 'blue';
-const isBlue = (color === 'blue'); // characteristic
-const isPresent = true; // state
+const color = 'blue'
+const isBlue = (color === 'blue') // characteristic
+const isPresent = true // state
 
 if (isBlue && isPresent) {
-  console.log('The color is blue and it is present!');
+  console.log('Blue is present!')
 }
 ```
 
-#### `has`
-Describes whether the current context possesses a certain value or state (returns `Boolean`).
+### `has`
+Describes whether the current context possesses a certain value or state (returns `boolean`).
 
 ```js
 /* Bad */
-const isProductsExist = (productsCount > 0);
-const areProductsPresent = (productsCount > 0);
+const isProductsExist = (productsCount > 0)
+const areProductsPresent = (productsCount > 0)
 
 /* Good */
-const hasProducts = (productsCount > 0);
+const hasProducts = (productsCount > 0)
 ```
 
-#### `should`
+### `should`
 Reflects a positive conditional statement (returns `Boolean`) tightly coupled with a certain action.
 
 ```js
-const currentUrl = 'https://dev.com';
-
-function shouldUpdateUrl(url) {
-  return (url !== currentUrl);
+function shouldUpdateUrl(url, expectedUrl) {
+  return (url !== expectedUrl)
 }
 ```
 
-#### `min`/`max`
-Represent minimum or maximum value. Useful for describing boundaries or allowed limits.
+### `min`/`max`
+Represent minimum or maximum value. Useful for describing boundaries or limits.
 
 ```js
 function PostsList() {
-  this.minPosts = 3;
-  this.maxPosts = 10;
+  this.minPosts = 3
+  this.maxPosts = 10
 }
 ```
 
-#### `prev`/`next`
+### `prev`/`next`
 Indicate the previous and the next state of a variable in the current context. Useful for describing state transitions.
 
 ```jsx
 function fetchPosts() {
-  const prevPosts = this.state.posts;
+  const prevPosts = this.state.posts
  
-  const fetchedPosts = fetch('...');
-  const nextPosts = prevPosts.merge(fetchedPosts);
+  const fetchedPosts = fetch('...')
+  const nextPosts = prevPosts.merge(fetchedPosts)
 
-  return this.setState({ posts: nextPosts });
+  return this.setState({ posts: nextPosts })
 }
 ```
