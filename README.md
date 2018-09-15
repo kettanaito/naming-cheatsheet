@@ -234,7 +234,7 @@ function getRecentPosts(posts) {
 }
 ```
 
-> Some language-specific assumptions may allow to ommit the context. For example, in JavaScript it is common that `filter` operates on Array. Adding explicit `filterArray` would be unnecessary.
+> Some language-specific assumptions may allow to omit the context. For example, in JavaScript it is common that `filter` operates on Array. Adding explicit `filterArray` would be unnecessary.
 
 ---
 
