@@ -180,7 +180,7 @@ removeFilter('price', selectedFilters)
 > See also [delete](#delete).
 
 ### `delete`
-Completely erazes something from the realms of existance.
+Completely erazes something from the realms of existence.
 
 Imagine you are a content editor, and there is that notorious post you wish to get rid of. Once you clicked a shiny "Delete post" button, the CMS performed a `deletePost` action, **not** `removePost`.
 
@@ -193,7 +193,7 @@ function deletePost(id) {
 > See also [remove](#remove).
 
 ### `compose`
-Creates a new data from the existing one. Mostly applicable to strings or objects.
+Creates a new data from the existing one. Mostly applicable to strings, objects, or functions.
 
 ```js
 function composePageUrl(pageName, pageId) {
@@ -204,11 +204,10 @@ function composePageUrl(pageName, pageId) {
 > See also [get](#get).
 
 ### `handle`
-Handles a dedicated action. Often used in naming the callback methods.
+Handles an action. Often used when naming a callback method.
 
 ```js
-function handleLinkClick(event) {
-  event.preventDefault()
+function handleLinkClick() {
   console.log('Clicked a link!')
 }
 
@@ -235,16 +234,16 @@ function getRecentPosts(posts) {
 }
 ```
 
-> Note that language-specific assumptions may allow to ommit the context in some cases. For example, in JavaScript it is common that `filter` operates on Array. Adding explicit `filterArray` would be unnecessary.
+> Some language-specific assumptions may allow to ommit the context. For example, in JavaScript it is common that `filter` operates on Array. Adding explicit `filterArray` would be unnecessary.
 
 ---
 
 ## Prefixes
 
-Prefix enhances the meaning of a variable.
+Prefix enhances the meaning of a variable. It is rarely used in function names.
 
 ### `is`
-Describes certain characteristic or state of the current context (returns `boolean`).
+Describes a characteristic or state of the current context (usually `boolean`).
 
 ```js
 const color = 'blue'
@@ -257,7 +256,7 @@ if (isBlue && isPresent) {
 ```
 
 ### `has`
-Describes whether the current context possesses a certain value or state (returns `boolean`).
+Describes whether the current context possesses a certain value or state (usually `boolean`).
 
 ```js
 /* Bad */
@@ -269,7 +268,7 @@ const hasProducts = (productsCount > 0)
 ```
 
 ### `should`
-Reflects a positive conditional statement (returns `Boolean`) tightly coupled with a certain action.
+Reflects a positive conditional statement (usually `boolean`) coupled with a certain action.
 
 ```js
 function shouldUpdateUrl(url, expectedUrl) {
@@ -278,7 +277,7 @@ function shouldUpdateUrl(url, expectedUrl) {
 ```
 
 ### `min`/`max`
-Represent minimum or maximum value. Useful for describing boundaries or limits.
+Represent minimum or maximum value. Used when describing boundaries or limits.
 
 ```js
 function PostsList() {
@@ -288,7 +287,7 @@ function PostsList() {
 ```
 
 ### `prev`/`next`
-Indicate the previous and the next state of a variable in the current context. Useful for describing state transitions.
+Indicate the previous or the next state of a variable in the current context. Used when describing state transitions.
 
 ```jsx
 function fetchPosts() {
