@@ -82,7 +82,7 @@ return <Button disabled={!isEnabled} />
 
 /* Good */
 const isDisabled = (itemsCount <= 3)
-return <Button disabled={isDisabled} />)
+return <Button disabled={isDisabled} />
 ```
 
 ---
@@ -280,9 +280,12 @@ function shouldUpdateUrl(url, expectedUrl) {
 Represent minimum or maximum value. Used when describing boundaries or limits.
 
 ```js
-function PostsList() {
-  this.minPosts = 3
-  this.maxPosts = 10
+/**
+ * Renders random amount of posts within
+ * the given min/max boundaries.
+ */
+function renderPosts(posts, minPosts, maxPosts) {
+  return posts.slice(0, randomBetween(minPosts, maxPosts))
 }
 ```
 
@@ -294,8 +297,8 @@ function fetchPosts() {
   const prevPosts = this.state.posts
  
   const fetchedPosts = fetch('...')
-  const nextPosts = prevPosts.merge(fetchedPosts)
+  const nextPosts = concat(prevPosts, fetchedPosts)
 
-  return this.setState({ posts: nextPosts })
+  this.setState({ posts: nextPosts })
 }
 ```
