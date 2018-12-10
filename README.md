@@ -29,9 +29,9 @@ const should_update = true
 ## S-I-D
 
 A name must be *short*, *intuitive* and *descriptive*:
-  * **Short**. A name must not take long to type and, therefore, to remember,
-  * **Intuitive**. Name must read naturally, as close to the common speach as possible
-  * **Descriptive**. Name must reflect what it does/possesses in the most efficient way,
+  * **Short**. A name must not take long to type and, therefore, to remember;
+  * **Intuitive**. Name must read naturally, as close to the common speach as possible;
+  * **Descriptive**. Name must reflect what it does/possesses in the most efficient way.
 
 ```js
 /* Bad */
@@ -47,7 +47,7 @@ const shouldDisplayPagination = (postsCount > 10) // alternatively
 
 ## Avoid contractions
 
-Do **not** use contractions. They contribute to nothing but decreased readability of your code. Finding a short, descriptive name may be hard, but contraction is not an excude to not doing so.
+Do **not** use contractions. They contribute to nothing but decreased readability of the code. Finding a short, descriptive name may be hard, but contraction is not an excuse for not doing so.
 
 ```js
 /* Bad */
@@ -90,22 +90,23 @@ return <Button disabled={isDisabled} />
 # Naming functions
 
 ## A/HC/LC Pattern
+
 There is a useful pattern to follow when naming functions:
 
 ```
 prefix? + action (A) + high context (HC) + low context? (LC)
 ```
 
-To illustrate, take a look at how this pattern may be applied in the table below.
+Take a look at how this pattern may be applied in the table below.
 
-| Name | Prefix | Action | High context | Low context |
+| Name | Prefix | Action (A) | High context (HC) | Low context (LC) |
 | ---- | ---- | ------ | ------------ | ----------- |
 | `getPost` | | `get` | `Post` |  |
 | `getPostData` | | `get` | `Post` | `Data` |
 | `handleClickOutside` | | `handle` | `Click` | `Outside` |
 | `shouldDisplayMessage` | `should` | `Display` | `Message`| |
 
-> **Note:** Context order affects the meaning of a method. For example, `shouldUpdateComponent` means *you* are about to update a component, while `shouldComponentUpdate` tells you that *component* will update on itself, and you are but controlling whether it should do that right now.
+> **Note:** The order of context affects the meaning of a variable. For example, `shouldUpdateComponent` means *you* are about to update a component, while `shouldComponentUpdate` tells you that *component* will update on itself, and you are but controlling whether it should do that right now.
 In other words, **high context emphasizes the meaning of a variable**.
 
 ---
@@ -115,6 +116,7 @@ In other words, **high context emphasizes the meaning of a variable**.
 The verb part of your function name. The most important part responsible for describing what the function *does*.
 
 ### `get`
+
 Accesses data immediately (i.e. shorthand getter of internal data).
 ```js
 function getFruitsCount() {
@@ -125,6 +127,7 @@ function getFruitsCount() {
 > See also [compose](#compose).
 
 ### `set`
+
 Declaratively sets a variable with value `A` to value `B`.
 
 ```js
@@ -139,6 +142,7 @@ console.log(fruits) // 5
 ```
 
 ### `reset`
+
 Sets a variable back to its initial value or state.
 
 ```js
@@ -156,6 +160,7 @@ console.log(fruits) // 5
 ```
 
 ### `fetch`
+
 Requests for a data, which takes time (i.e. async request).
 ```js
 function fetchPosts(postCount) {
@@ -164,6 +169,7 @@ function fetchPosts(postCount) {
 ```
 
 ### `remove`
+
 Removes something *from* somewhere.
 
 For example, if you have a collection of selected filters on a search page, removing one of them from the collection is `removeFilter`, **not** `deleteFilter` (and this is how you would naturally say it in English as well):
@@ -180,6 +186,7 @@ removeFilter('price', selectedFilters)
 > See also [delete](#delete).
 
 ### `delete`
+
 Completely erazes something from the realms of existence.
 
 Imagine you are a content editor, and there is that notorious post you wish to get rid of. Once you clicked a shiny "Delete post" button, the CMS performed a `deletePost` action, **not** `removePost`.
@@ -193,6 +200,7 @@ function deletePost(id) {
 > See also [remove](#remove).
 
 ### `compose`
+
 Creates a new data from the existing one. Mostly applicable to strings, objects, or functions.
 
 ```js
@@ -204,6 +212,7 @@ function composePageUrl(pageName, pageId) {
 > See also [get](#get).
 
 ### `handle`
+
 Handles an action. Often used when naming a callback method.
 
 ```js
@@ -243,6 +252,7 @@ function getRecentPosts(posts) {
 Prefix enhances the meaning of a variable. It is rarely used in function names.
 
 ### `is`
+
 Describes a characteristic or state of the current context (usually `boolean`).
 
 ```js
@@ -256,6 +266,7 @@ if (isBlue && isPresent) {
 ```
 
 ### `has`
+
 Describes whether the current context possesses a certain value or state (usually `boolean`).
 
 ```js
@@ -268,6 +279,7 @@ const hasProducts = (productsCount > 0)
 ```
 
 ### `should`
+
 Reflects a positive conditional statement (usually `boolean`) coupled with a certain action.
 
 ```js
@@ -290,6 +302,7 @@ function renderPosts(posts, minPosts, maxPosts) {
 ```
 
 ### `prev`/`next`
+
 Indicate the previous or the next state of a variable in the current context. Used when describing state transitions.
 
 ```jsx
