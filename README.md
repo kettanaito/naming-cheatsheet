@@ -315,3 +315,19 @@ function fetchPosts() {
   this.setState({ posts: nextPosts })
 }
 ```
+
+## Singular/Plurals
+
+Like a prefix, variable names can be made singular or plural depending on whether they hold a single value or multiple values.
+
+
+```js
+/* Bad */
+const friends = 'Bob';
+const friend = ['Bob', 'Tony', 'Tanya'];
+
+/* Good */
+const friend = 'Bob';
+const friends = ['Bob', 'Tony', 'Tanya'];
+```
+
