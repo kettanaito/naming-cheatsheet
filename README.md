@@ -105,6 +105,7 @@ Take a look at how this pattern may be applied in the table below.
 | `getPostData` | | `get` | `Post` | `Data` |
 | `handleClickOutside` | | `handle` | `Click` | `Outside` |
 | `shouldDisplayMessage` | `should` | `Display` | `Message`| |
+| `canAllowAnonymousUser` | `can` | `Allow` | `Anonymous`| `User` |
 
 > **Note:** The order of context affects the meaning of a variable. For example, `shouldUpdateComponent` means *you* are about to update a component, while `shouldComponentUpdate` tells you that *component* will update on itself, and you are but controlling whether it should do that right now.
 In other words, **high context emphasizes the meaning of a variable**.
@@ -131,7 +132,7 @@ function getFruitsCount() {
 Declaratively sets a variable with value `A` to value `B`.
 
 ```js
-const fruits = 0
+let fruits = 0
 
 function setFruits(nextFruits) {
   fruits = nextFruits
@@ -147,7 +148,8 @@ Sets a variable back to its initial value or state.
 
 ```js
 const initialFruits = 5
-const fruits = initialFruits
+let fruits = initialFruits
+
 setFruits(10)
 console.log(fruits) // 10
 

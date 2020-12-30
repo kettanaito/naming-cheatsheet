@@ -74,6 +74,7 @@ return (<Button disabled={isDisabled} />);
 | `getPostData` | | `get` | `Post` | `Data` |
 | `handleClickOutside` | | `handle` | `Click` | `Outside` |
 | `shouldDisplayMessage` | `should` | `Display` | `Message`| |
+| `canAllowAnonymousUser` | `can` | `Allow` | `Anonymous`| `User` |
 
 ## Наименование методов
 
@@ -98,7 +99,7 @@ function fetchPosts(postCount) {
 #### `set`
 Декларативно присвоить переменной `variableA` со значением `valueA` значение `valueB`.
 ```js
-const fruits = 0;
+let fruits = 0;
 
 function setFruits(nextFruits) {
   fruits = nextFruits;
@@ -111,7 +112,8 @@ setFruits(5); // fruits === 5
 Вернуть чему-то его первоначальное значение.
 ```js
 const initialFruits = 5;
-const fruits = initialFruits;
+let fruits = initialFruits;
+
 setFruits(10); // fruits === 10
 
 function resetFruits() {
