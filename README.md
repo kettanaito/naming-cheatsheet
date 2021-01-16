@@ -146,7 +146,7 @@ function getFruitsCount() {
 
 ### `set`
 
-Sets a declarative variable, with value `A` to value `B`.
+Sets a variable in a declarative way, with value `A` to value `B`.
 
 ```js
 const fruits = 0
