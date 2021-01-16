@@ -26,7 +26,7 @@ Although these suggestions can be applied to any programming language, I will us
 
 ## Naming convention
 
-Pick **one** naming convention and follow it. It may be `cammelCase`, or `snake_case`, or anyhow else, it does not matter. What matters is for it to remain consistent.
+Pick **one** naming convention and follow it. It may be `camelCase`, or `snake_case`, or anyhow else, it does not matter. What matters is for it to remain consistent.
 
 ```js
 /* Bad */
@@ -88,7 +88,7 @@ class MenuItem {
 }
 ```
 
-## Reflect expected result
+## Reflect the expected result
 
 A name should reflect the expected result.
 
@@ -123,7 +123,7 @@ Take a look at how this pattern may be applied in the table below.
 | `handleClickOutside`   |          | `handle`   | `Click`           | `Outside`        |
 | `shouldDisplayMessage` | `should` | `Display`  | `Message`         |                  |
 
-> **Note:** The order of context affects the meaning of a variable. For example, `shouldUpdateComponent` means _you_ are about to update a component, while `shouldComponentUpdate` tells you that _component_ will update on itself, and you are but controlling whether it should do that right now.
+> **Note:** The order of context affects the meaning of a variable. For example, `shouldUpdateComponent` means _you_ are about to update a component, while `shouldComponentUpdate` tells you that _component_ will update on itself, and you are but controlling when it should be updated.
 > In other words, **high context emphasizes the meaning of a variable**.
 
 ---
@@ -179,7 +179,7 @@ console.log(fruits) // 5
 
 ### `fetch`
 
-Requests for a data, which takes time (i.e. async request).
+Request for some data, which takes some indeterminate time (i.e. async request).
 
 ```js
 function fetchPosts(postCount) {
@@ -206,7 +206,7 @@ removeFilter('price', selectedFilters)
 
 ### `delete`
 
-Completely erazes something from the realms of existence.
+Completely erases something from the realms of existence.
 
 Imagine you are a content editor, and there is that notorious post you wish to get rid of. Once you clicked a shiny "Delete post" button, the CMS performed a `deletePost` action, **not** `removePost`.
 
@@ -309,11 +309,11 @@ function shouldUpdateUrl(url, expectedUrl) {
 
 ### `min`/`max`
 
-Represent minimum or maximum value. Used when describing boundaries or limits.
+Represents a minimum or maximum value. Used when describing boundaries or limits.
 
 ```js
 /**
- * Renders random amount of posts within
+ * Renders a random amount of posts within
  * the given min/max boundaries.
  */
 function renderPosts(posts, minPosts, maxPosts) {
