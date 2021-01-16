@@ -5,12 +5,14 @@
 </p>
 
 # Naming cheatsheet
+
 Naming things is hard. This sheet attempts to make it easier.
 
 Although these suggestions can be applied to any programming language, I will use JavaScript to illustrate them in practice.
 
 ## Naming convention
-Pick **one** naming convention and follow it. It may be `likeThis`, or `like_this`, or anyhow else, it does not matter. What matters is for it to remain consistent.
+
+Pick **one** naming convention and follow it. It may be `cammelCase`, or `snake_case`, or anyhow else, it does not matter. What matters is for it to remain consistent.
 
 ```js
 /* Bad */
@@ -28,21 +30,22 @@ const should_update = true
 
 ## S-I-D
 
-A name must be *short*, *intuitive* and *descriptive*:
-  * **Short**. A name must not take long to type and, therefore, to remember;
-  * **Intuitive**. Name must read naturally, as close to the common speach as possible;
-  * **Descriptive**. Name must reflect what it does/possesses in the most efficient way.
+A name must be _short_, _intuitive_ and _descriptive_:
+
+- **Short**. A name must not take long to type and, therefore, remember;
+- **Intuitive**. A name must read naturally, as close to the common speech as possible;
+- **Descriptive**. A name must reflect what it does/possesses in the most efficient way.
 
 ```js
 /* Bad */
 const a = 5 // "a" could mean anything
-const isPaginatable = (postsCount > 10) // "Paginatable" sounds extremely unnatural
-const shouldPaginatize = (postsCount > 10) // Made up verbs are so much fun!
+const isPaginatable = postsCount > 10 // "Paginatable" sounds extremely unnatural
+const shouldPaginatize = postsCount > 10 // Made up verbs are so much fun!
 
 /* Good */
 const postsCount = 5
-const hasPagination = (postsCount > 10)
-const shouldDisplayPagination = (postsCount > 10) // alternatively
+const hasPagination = postsCount > 10
+const shouldDisplayPagination = postsCount > 10 // alternatively
 ```
 
 ## Avoid contractions
@@ -65,7 +68,7 @@ A name should not duplicate the context in which it is defined. Always remove th
 class MenuItem {
   /* Method name duplicates the context (which is "MenuItem") */
   handleMenuItemClick = (event) => { ... }
-  
+
   /* Reads nicely as `MenuItem.handleClick()` */
   handleClick = (event) => { ... }
 }
@@ -77,11 +80,11 @@ A name should reflect the expected result.
 
 ```jsx
 /* Bad */
-const isEnabled = (itemsCount > 3)
+const isEnabled = itemsCount > 3
 return <Button disabled={!isEnabled} />
 
 /* Good */
-const isDisabled = (itemsCount <= 3)
+const isDisabled = itemsCount <= 3
 return <Button disabled={isDisabled} />
 ```
 
@@ -99,28 +102,29 @@ prefix? + action (A) + high context (HC) + low context? (LC)
 
 Take a look at how this pattern may be applied in the table below.
 
-| Name | Prefix | Action (A) | High context (HC) | Low context (LC) |
-| ---- | ---- | ------ | ------------ | ----------- |
-| `getPost` | | `get` | `Post` |  |
-| `getPostData` | | `get` | `Post` | `Data` |
-| `handleClickOutside` | | `handle` | `Click` | `Outside` |
-| `shouldDisplayMessage` | `should` | `Display` | `Message`| |
+| Name                   | Prefix   | Action (A) | High context (HC) | Low context (LC) |
+| ---------------------- | -------- | ---------- | ----------------- | ---------------- |
+| `getPost`              |          | `get`      | `Post`            |                  |
+| `getPostData`          |          | `get`      | `Post`            | `Data`           |
+| `handleClickOutside`   |          | `handle`   | `Click`           | `Outside`        |
+| `shouldDisplayMessage` | `should` | `Display`  | `Message`         |                  |
 
-> **Note:** The order of context affects the meaning of a variable. For example, `shouldUpdateComponent` means *you* are about to update a component, while `shouldComponentUpdate` tells you that *component* will update on itself, and you are but controlling whether it should do that right now.
-In other words, **high context emphasizes the meaning of a variable**.
+> **Note:** The order of context affects the meaning of a variable. For example, `shouldUpdateComponent` means _you_ are about to update a component, while `shouldComponentUpdate` tells you that _component_ will update on itself, and you are but controlling whether it should do that right now.
+> In other words, **high context emphasizes the meaning of a variable**.
 
 ---
 
 ## Actions
 
-The verb part of your function name. The most important part responsible for describing what the function *does*.
+The verb part of your function name. The most important part responsible for describing what the function _does_.
 
 ### `get`
 
 Accesses data immediately (i.e. shorthand getter of internal data).
+
 ```js
 function getFruitsCount() {
-  return this.fruits.length;
+  return this.fruits.length
 }
 ```
 
@@ -162,6 +166,7 @@ console.log(fruits) // 5
 ### `fetch`
 
 Requests for a data, which takes time (i.e. async request).
+
 ```js
 function fetchPosts(postCount) {
   return fetch('https://api.dev/posts', {...})
@@ -170,13 +175,13 @@ function fetchPosts(postCount) {
 
 ### `remove`
 
-Removes something *from* somewhere.
+Removes something _from_ somewhere.
 
 For example, if you have a collection of selected filters on a search page, removing one of them from the collection is `removeFilter`, **not** `deleteFilter` (and this is how you would naturally say it in English as well):
 
 ```js
 function removeFilter(filterName, filters) {
-  return filters.filter(name => name !== filterName)
+  return filters.filter((name) => name !== filterName)
 }
 
 const selectedFilters = ['price', 'availability', 'size']
@@ -193,7 +198,7 @@ Imagine you are a content editor, and there is that notorious post you wish to g
 
 ```js
 function deletePost(id) {
- return database.find({ id }).delete()
+  return database.find({ id }).delete()
 }
 ```
 
@@ -201,7 +206,7 @@ function deletePost(id) {
 
 ### `compose`
 
-Creates a new data from the existing one. Mostly applicable to strings, objects, or functions.
+Creates new data from the existing one. Mostly applicable to strings, objects, or functions.
 
 ```js
 function composePageUrl(pageName, pageId) {
@@ -229,7 +234,7 @@ link.addEventListener('click', handleLinkClick)
 
 A domain that a function operates on.
 
-A function is often an action on *something*. It is important to state what is its operable domain, or at least an expected data type.
+A function is often an action on _something_. It is important to state what is its operable domain, or at least an expected data type.
 
 ```js
 /* A pure function operating with primitives */
@@ -243,7 +248,7 @@ function getRecentPosts(posts) {
 }
 ```
 
-> Some language-specific assumptions may allow to omit the context. For example, in JavaScript it is common that `filter` operates on Array. Adding explicit `filterArray` would be unnecessary.
+> Some language-specific assumptions may allow omitting the context. For example, in JavaScript, it's common that `filter` operates on Array. Adding explicit `filterArray` would be unnecessary.
 
 ---
 
@@ -257,7 +262,7 @@ Describes a characteristic or state of the current context (usually `boolean`).
 
 ```js
 const color = 'blue'
-const isBlue = (color === 'blue') // characteristic
+const isBlue = color === 'blue' // characteristic
 const isPresent = true // state
 
 if (isBlue && isPresent) {
@@ -271,11 +276,11 @@ Describes whether the current context possesses a certain value or state (usuall
 
 ```js
 /* Bad */
-const isProductsExist = (productsCount > 0)
-const areProductsPresent = (productsCount > 0)
+const isProductsExist = productsCount > 0
+const areProductsPresent = productsCount > 0
 
 /* Good */
-const hasProducts = (productsCount > 0)
+const hasProducts = productsCount > 0
 ```
 
 ### `should`
@@ -284,11 +289,12 @@ Reflects a positive conditional statement (usually `boolean`) coupled with a cer
 
 ```js
 function shouldUpdateUrl(url, expectedUrl) {
-  return (url !== expectedUrl)
+  return url !== expectedUrl
 }
 ```
 
 ### `min`/`max`
+
 Represent minimum or maximum value. Used when describing boundaries or limits.
 
 ```js
@@ -308,7 +314,7 @@ Indicate the previous or the next state of a variable in the current context. Us
 ```jsx
 function fetchPosts() {
   const prevPosts = this.state.posts
- 
+
   const fetchedPosts = fetch('...')
   const nextPosts = concat(prevPosts, fetchedPosts)
 
@@ -320,14 +326,12 @@ function fetchPosts() {
 
 Like a prefix, variable names can be made singular or plural depending on whether they hold a single value or multiple values.
 
-
 ```js
 /* Bad */
-const friends = 'Bob';
-const friend = ['Bob', 'Tony', 'Tanya'];
+const friends = 'Bob'
+const friend = ['Bob', 'Tony', 'Tanya']
 
 /* Good */
-const friend = 'Bob';
-const friends = ['Bob', 'Tony', 'Tanya'];
+const friend = 'Bob'
+const friends = ['Bob', 'Tony', 'Tanya']
 ```
-
