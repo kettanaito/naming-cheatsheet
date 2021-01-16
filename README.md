@@ -6,6 +6,20 @@
 
 # Naming cheatsheet
 
+- [Naming convention](#naming-convention)
+- [S-I-D](#s-i-d)
+- [Avoid contractions](#avoid-contractions)
+- [Avoid context duplication](#avoid-context-duplication)
+- [Reflect expected result](#reflect-expected-result)
+- Naming functions
+  - [A/HC/LC pattern](#ahclc-pattern)
+    - [Actions](#actions)
+    - [Context](#context)
+    - [Prefixes](#prefixes)
+- [Singular and Plurals](#singular-and-plurals)
+
+---
+
 Naming things is hard. This sheet attempts to make it easier.
 
 Although these suggestions can be applied to any programming language, I will use JavaScript to illustrate them in practice.
@@ -250,7 +264,7 @@ function getRecentPosts(posts) {
 
 > Some language-specific assumptions may allow omitting the context. For example, in JavaScript, it's common that `filter` operates on Array. Adding explicit `filterArray` would be unnecessary.
 
----
+--
 
 ## Prefixes
 
@@ -322,7 +336,7 @@ function fetchPosts() {
 }
 ```
 
-## Singular/Plurals
+## Singular and Plurals
 
 Like a prefix, variable names can be made singular or plural depending on whether they hold a single value or multiple values.
 
