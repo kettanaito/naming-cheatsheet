@@ -105,7 +105,7 @@ Take a look at how this pattern may be applied in the table below.
 | `getPostData` | | `get` | `Post` | `Data` |
 | `handleClickOutside` | | `handle` | `Click` | `Outside` |
 | `shouldDisplayMessage` | `should` | `Display` | `Message`| |
-| `canAllowAnonymousUser` | `can` | `Allow` | `Anonymous`| `User` |
+| `allowsAnonymousUser` | | `allows` | `Anonymous`| `User` |
 
 > **Note:** The order of context affects the meaning of a variable. For example, `shouldUpdateComponent` means *you* are about to update a component, while `shouldComponentUpdate` tells you that *component* will update on itself, and you are but controlling whether it should do that right now.
 In other words, **high context emphasizes the meaning of a variable**.

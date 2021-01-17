@@ -74,7 +74,7 @@ return (<Button disabled={isDisabled} />);
 | `getPostData` | | `get` | `Post` | `Data` |
 | `handleClickOutside` | | `handle` | `Click` | `Outside` |
 | `shouldDisplayMessage` | `should` | `Display` | `Message`| |
-| `canAllowAnonymousUser` | `can` | `Allow` | `Anonymous`| `User` |
+| `allowsAnonymousUser` | | `allows` | `Anonymous`| `User` |
 
 ## Наименование методов
 
