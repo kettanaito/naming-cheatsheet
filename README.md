@@ -76,7 +76,7 @@ const shouldPaginatize = a > 10 // Made up verbs are so much fun!
 /* Good */
 const postCount = 5
 const hasPagination = postCount > 10
-const shouldDisplayPagination = postCount > 10 // alternatively
+const shouldPaginate = postCount > 10 // alternatively
 ```
 
 ## Avoid contractions
