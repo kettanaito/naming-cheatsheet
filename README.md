@@ -182,7 +182,7 @@ Sets a variable back to its initial value or state.
 
 ```js
 const initialFruits = 5
-const fruits = initialFruits
+let fruits = initialFruits
 setFruits(10)
 console.log(fruits) // 10
 
