@@ -11,7 +11,7 @@
 - [Avoid contractions](#avoid-contractions)
 - [Avoid context duplication](#avoid-context-duplication)
 - [Reflect expected result](#reflect-expected-result)
-- Naming functions
+- [Naming functions](#naming-functions)
   - [A/HC/LC pattern](#ahclc-pattern)
     - [Actions](#actions)
     - [Context](#context)
@@ -146,7 +146,7 @@ function getFruitsCount() {
 
 ### `set`
 
-Declaratively sets a variable with value `A` to value `B`.
+Sets a variable in a declarative way, with value `A` to value `B`.
 
 ```js
 const fruits = 0
@@ -206,7 +206,7 @@ removeFilter('price', selectedFilters)
 
 ### `delete`
 
-Completely erazes something from the realms of existence.
+Completely erases something from the realms of existence.
 
 Imagine you are a content editor, and there is that notorious post you wish to get rid of. Once you clicked a shiny "Delete post" button, the CMS performed a `deletePost` action, **not** `removePost`.
 
