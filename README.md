@@ -51,11 +51,11 @@ const pages_count = 5
 const shouldUpdate = true
 
 /* Good */
-const pagesCount = 5
+const pageCount = 5
 const shouldUpdate = true
 
 /* Good as well */
-const pages_count = 5
+const page_count = 5
 const should_update = true
 ```
 
@@ -70,13 +70,13 @@ A name must be _short_, _intuitive_ and _descriptive_:
 ```js
 /* Bad */
 const a = 5 // "a" could mean anything
-const isPaginatable = postsCount > 10 // "Paginatable" sounds extremely unnatural
-const shouldPaginatize = postsCount > 10 // Made up verbs are so much fun!
+const isPaginatable = a > 10 // "Paginatable" sounds extremely unnatural
+const shouldPaginatize = a > 10 // Made up verbs are so much fun!
 
 /* Good */
-const postsCount = 5
-const hasPagination = postsCount > 10
-const shouldDisplayPagination = postsCount > 10 // alternatively
+const postCount = 5
+const hasPagination = postCount > 10
+const shouldDisplayPagination = postCount > 10 // alternatively
 ```
 
 ## Avoid contractions
@@ -111,11 +111,11 @@ A name should reflect the expected result.
 
 ```jsx
 /* Bad */
-const isEnabled = itemsCount > 3
+const isEnabled = itemCount > 3
 return <Button disabled={!isEnabled} />
 
 /* Good */
-const isDisabled = itemsCount <= 3
+const isDisabled = itemCount <= 3
 return <Button disabled={isDisabled} />
 ```
 
@@ -154,7 +154,7 @@ The verb part of your function name. The most important part responsible for des
 Accesses data immediately (i.e. shorthand getter of internal data).
 
 ```js
-function getFruitsCount() {
+function getFruitCount() {
   return this.fruits.length
 }
 ```
