@@ -166,7 +166,7 @@ function getFruitsCount() {
 Sets a variable in a declarative way, with value `A` to value `B`.
 
 ```js
-const fruits = 0
+let fruits = 0
 
 function setFruits(nextFruits) {
   fruits = nextFruits
@@ -182,7 +182,7 @@ Sets a variable back to its initial value or state.
 
 ```js
 const initialFruits = 5
-const fruits = initialFruits
+let fruits = initialFruits
 setFruits(10)
 console.log(fruits) // 10
 
