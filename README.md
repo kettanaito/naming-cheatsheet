@@ -364,5 +364,5 @@ const friend = ['Bob', 'Tony', 'Tanya']
 
 /* Good */
 const friend = 'Bob'
-const friends = ['Bob', 'Tony', 'Tanya']
+const friendList = ['Bob', 'Tony', 'Tanya']
 ```
