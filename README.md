@@ -47,7 +47,7 @@ Pick **one** naming convention and follow it. It may be `camelCase`, or `snake_c
 
 ```js
 /* Bad */
-const pages_count = 5
+const page_count = 5
 const shouldUpdate = true
 
 /* Good */
