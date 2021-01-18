@@ -43,7 +43,7 @@ const friends = ['Kate', 'John']
 
 ## Naming convention
 
-Pick **one** naming convention and follow it. It may be `camelCase`, or `snake_case`, or anyhow else, it does not matter. What matters is for it to remain consistent.
+Pick **one** naming convention and follow it. It may be `camelCase`, `PascalCase`, `snake_case`, or anything else, as long as it remains consistent. Many programming languages have their own traditions regarding naming conventions; check the documentation for your language or study some popular repositories on Github!
 
 ```js
 /* Bad */
