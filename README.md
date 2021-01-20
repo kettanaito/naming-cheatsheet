@@ -8,7 +8,7 @@
 
 - [English language](#english-language)
 - [Naming convention](#naming-convention)
-- [Time/Duration naming convention](#time-duration-naming-convention)
+- [Time/Duration naming convention](#timeduration-naming-convention)
 - [S-I-D](#s-i-d)
 - [Avoid contractions](#avoid-contractions)
 - [Avoid context duplication](#avoid-context-duplication)
