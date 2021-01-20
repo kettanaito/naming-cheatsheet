@@ -9,6 +9,7 @@
 - [English language](#english-language)
 - [Naming convention](#naming-convention)
 - [S-I-D](#s-i-d)
+- [Be unambiguous](#be-unambiguous)
 - [Avoid contractions](#avoid-contractions)
 - [Avoid context duplication](#avoid-context-duplication)
 - [Reflect the expected result](#reflect-the-expected-result)
@@ -77,6 +78,18 @@ const shouldPaginatize = a > 10 // Made up verbs are so much fun!
 const postCount = 5
 const hasPagination = postCount > 10
 const shouldDisplayPagination = postCount > 10 // alternatively
+```
+
+## Be unambiguous
+
+A name must be unambiguous about what it represents.
+
+```js
+/* Bad */
+const order = params['order'] // Is this an order record, order number, order id?
+
+/* Good */
+const orderID = params['order_id']
 ```
 
 ## Avoid contractions
