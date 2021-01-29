@@ -135,8 +135,8 @@ Take a look at how this pattern may be applied in the table below.
 
 | Name                   | Prefix   | Action (A) | High context (HC) | Low context (LC) |
 | ---------------------- | -------- | ---------- | ----------------- | ---------------- |
-| `getPost`              |          | `get`      | `Post`            |                  |
-| `getPostData`          |          | `get`      | `Post`            | `Data`           |
+| `getUser`              |          | `get`      | `User`            |                  |
+| `getUserMessages`      |          | `get`      | `User`            | `Messages`       |
 | `handleClickOutside`   |          | `handle`   | `Click`           | `Outside`        |
 | `shouldDisplayMessage` | `should` | `Display`  | `Message`         |                  |
 
