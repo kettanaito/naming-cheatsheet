@@ -241,7 +241,7 @@ Creates new data from the existing one. Mostly applicable to strings, objects, o
 
 ```js
 function composePageUrl(pageName, pageId) {
-  return `${pageName.toLowerCase()}-${pageId}`
+  return (pageName.toLowerCase() + '-' + pageId)
 }
 ```
 
