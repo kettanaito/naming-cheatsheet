@@ -275,7 +275,7 @@ function filter(predicate, list) {
 
 /* Function operating exactly on posts */
 function getRecentPosts(posts) {
-  return filter(posts, (post) => post.date === Date.now())
+  return filter((post) => post.date === Date.now(), posts)
 }
 ```
 
