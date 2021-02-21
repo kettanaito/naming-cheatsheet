@@ -265,7 +265,7 @@ link.addEventListener('click', handleLinkClick)
 
 A domain that a function operates on.
 
-A function is often an action on _something_. It is important to state what is its operable domain, or at least an expected data type.
+A function is often an action on _something_. It is important to state what its operable domain is, or at least an expected data type.
 
 ```js
 /* A pure function operating with primitives */
