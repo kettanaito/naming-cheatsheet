@@ -269,7 +269,7 @@ A function is often an action on _something_. It is important to state what its 
 
 ```js
 /* A pure function operating with primitives */
-function filter(predicate, list) {
+function filter(list, predicate) {
   return list.filter(predicate)
 }
 
