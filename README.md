@@ -8,6 +8,7 @@
 
 - [English language](#english-language)
 - [Naming convention](#naming-convention)
+- [Time/Duration naming convention](#timeduration-naming-convention)
 - [S-I-D](#s-i-d)
 - [Avoid contractions](#avoid-contractions)
 - [Avoid context duplication](#avoid-context-duplication)
@@ -57,6 +58,23 @@ const shouldUpdate = true
 /* Good as well */
 const page_count = 5
 const should_update = true
+```
+
+## Time/Duration naming convention
+
+Name your variables with **units**. For timestamps, if not using a native date/timestamp type, be sure to have something like `seconds` or `ns`.
+
+```js
+/* Bad */
+const startAt = Date.now()
+const delay = 5
+
+/* Good */
+const startAtUnixMilliseconds = Date.now()
+const delaySeconds = 5
+
+/* Good as well */
+const start_at_unix_ms = Date.now()
 ```
 
 ## S-I-D
