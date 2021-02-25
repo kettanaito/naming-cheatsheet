@@ -247,6 +247,18 @@ function composePageUrl(pageName, pageId) {
 
 > See also [get](#get).
 
+### `create`
+
+Creates a new object. 
+
+```js
+function createPage(pageName) {
+  return new Page(pageName)
+}
+```
+
+> See also [compose](#compose).
+
 ### `handle`
 
 Handles an action. Often used when naming a callback method.
