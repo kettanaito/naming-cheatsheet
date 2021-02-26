@@ -11,6 +11,7 @@
 - [S-I-D](#s-i-d)
 - [Avoid contractions](#avoid-contractions)
 - [Avoid context duplication](#avoid-context-duplication)
+- [Prefer positive over negative](#prefer-positive-over-negative)
 - [Reflect the expected result](#reflect-the-expected-result)
 - [Naming functions](#naming-functions)
   - [A/HC/LC pattern](#ahclc-pattern)
@@ -102,6 +103,41 @@ class MenuItem {
 
   /* Reads nicely as `MenuItem.handleClick()` */
   handleClick = (event) => { ... }
+}
+```
+
+## Prefer positive over negative
+
+It's easier to have at most one negation when reading code, so:
+
+```jsx
+/* Bad */
+const isNotOldEnough = age < 13
+if (isNotOldEnough) {
+  // ...
+} else {
+  // ...
+}
+
+if (!isNotOldEnough) {
+  // ...
+} else {
+  // Wait this case is for the else of if !isNotOldEnough, is... If not not isNotOldEnough!
+}
+
+
+/* Good */
+const isOldEnough = age >= 13
+if (isOldEnough) {
+  // ...
+} else {
+  // ...
+}
+
+if (!isOldEnough) {
+  // ...
+} else {
+  // ...
 }
 ```
 
