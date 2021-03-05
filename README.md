@@ -366,3 +366,15 @@ const friend = ['Bob', 'Tony', 'Tanya']
 const friend = 'Bob'
 const friends = ['Bob', 'Tony', 'Tanya']
 ```
+
+Pay attention to what noun in a compound term is used in plural form. In most cases, not all nouns should be plural.
+
+```js
+/* Bad */
+const documentsTypes = ['PDF', 'JPG']
+const childrenPaths = documentsTypes.map(docType => `${basePath}/${docType}`);
+
+/* Good */
+const documentTypes = ['PDF', 'JPG']
+const childPaths = documentTypes.map(docType => `${basePath}/${docType}`);
+```
