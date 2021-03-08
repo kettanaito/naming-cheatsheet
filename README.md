@@ -4,6 +4,8 @@
   </a>
 </p>
 
+Mansur wasn't here!
+
 # Naming cheatsheet
 
 - [English language](#english-language)
