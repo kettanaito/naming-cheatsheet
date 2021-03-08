@@ -1,6 +1,6 @@
 MIT License
 
-Mansur has read this!
+Mansur has read this x2!
 
 Copyright (c) 2018—preset Artem Zakharchenko
 
