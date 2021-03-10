@@ -8,6 +8,8 @@
 #Hi! It's me, third commit in first branch!!!
 #And me third)
 #3 commit
+#Hello, my friend. Hi! We are commit from first and second branches!!!
+
 
 
 # Naming cheatsheet
