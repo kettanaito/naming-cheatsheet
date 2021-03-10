@@ -6,7 +6,7 @@
 
 
 #Hi! It's me, third commit in first branch!!!
-#And me second)
+#And me third)
 
 
 # Naming cheatsheet
