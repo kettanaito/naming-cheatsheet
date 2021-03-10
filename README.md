@@ -6,7 +6,7 @@
 
 
 
-#Hello, my friend. I am first commit in second branch.
+#Hello, my friend. I am second commit in second branch.
 
 
 
