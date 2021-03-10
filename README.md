@@ -6,7 +6,9 @@
 
 
 
-#Hello, my friend. I am third commit in second branch.
+
+#Hello, my friend. Hi! We are commit from first and second branches!!!
+
 
 
 
