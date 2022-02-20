@@ -1,5 +1,4 @@
-<br>Something from first branch</br>
-<p>From first</p>
+<br>Something from both branches</br>
 <p>It is too</p>
 <p align="center">
   <a href="https://github.com/kettanaito/naming-cheatsheet">
