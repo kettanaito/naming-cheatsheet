@@ -1,6 +1,5 @@
-<br>Something from second branch</br>
-<p>From second</p>
-<p>It is too</p>
+<br>aga</br>
+<p>aaaba</p>
 <p align="center">
   <a href="https://github.com/kettanaito/naming-cheatsheet">
     <img src="./naming-cheatsheet.png" alt="Naming cheatsheet" />
