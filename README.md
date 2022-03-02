@@ -1,4 +1,4 @@
-## English language
+## language
 
 Use English language when naming your variables and functions.
 
