@@ -2,7 +2,6 @@ align="center"
   <a href="https://github.com/kettanaito/naming-cheatsheet">
     <img ="./naming-cheatsheet.png" ="Naming cheatsheet" />
   </a>
-</p>
 
 # Naming cheatsheet
 
