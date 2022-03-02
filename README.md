@@ -1,7 +1,4 @@
-<p ="center">
-="https://github.com/kettanaito/naming-cheatsheet">
-    <img src="./naming-cheatsheet.png" alt="Naming cheatsheet" />
-</p>
+
 
 # Naming cheatsheet
 
