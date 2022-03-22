@@ -4,6 +4,8 @@
   </a>
 </p>
 
+English | [简体中文](./README-CN.md)
+
 # Naming cheatsheet
 
 - [English language](#english-language)
