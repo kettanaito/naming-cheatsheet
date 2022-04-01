@@ -31,7 +31,7 @@ Use English language when naming your variables and functions.
 
 ```js
 /* Bad */
-2 const primerNombre = 'Gustavo'
+3 const primerNombre = 'Gustavo'
 const amigos = ['Kate', 'John']
 
 /* Good */
