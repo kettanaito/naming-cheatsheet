@@ -235,9 +235,9 @@ function deletePost(id) {
 > See also [remove](#remove).
 
 > **`remove` or `delete`?**
-> 
+>
 > When the difference between `remove` and `delete` is not so obvious to you, I'd sugguest looking at their opposite actions - `add` and `create`.
-> The key difference between `add` and `create` is that `add` needs a destination while `create` **requires no destination**. You `add` an item *to somewhere*, but you don't "`create` it *to somewhere*".
+> The key difference between `add` and `create` is that `add` needs a destination while `create` **requires no destination**. You `add` an item _to somewhere_, but you don't "`create` it _to somewhere_".
 > Simply pair `remove` with `add` and `delete` with `create`.
 >
 > Explained in detail [here](https://github.com/kettanaito/naming-cheatsheet/issues/74#issue-1174942962).
@@ -288,7 +288,7 @@ function getRecentPosts(posts) {
 
 > Some language-specific assumptions may allow omitting the context. For example, in JavaScript, it's common that `filter` operates on Array. Adding explicit `filterArray` would be unnecessary.
 
---
+---
 
 ## Prefixes
 
