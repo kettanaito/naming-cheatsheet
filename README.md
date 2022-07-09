@@ -161,6 +161,15 @@ function getFruitCount() {
 
 > See also [compose](#compose).
 
+You can use `get` when performing asynchronous operations as well:
+
+```js
+async function getUser(id) {
+  const user = await fetch(`/api/user/${id}`)
+  return user
+}
+```
+
 ### `set`
 
 Sets a variable in a declarative way, with value `A` to value `B`.
@@ -192,16 +201,6 @@ function resetFruits() {
 
 resetFruits()
 console.log(fruits) // 5
-```
-
-### `fetch`
-
-Request for some data, which takes some indeterminate time (i.e. async request).
-
-```js
-function fetchPosts(postCount) {
-  return fetch('https://api.dev/posts', {...})
-}
 ```
 
 ### `remove`
@@ -241,7 +240,7 @@ Creates new data from the existing one. Mostly applicable to strings, objects, o
 
 ```js
 function composePageUrl(pageName, pageId) {
-  return (pageName.toLowerCase() + '-' + pageId)
+  return pageName.toLowerCase() + '-' + pageId
 }
 ```
 
@@ -343,11 +342,11 @@ function renderPosts(posts, minPosts, maxPosts) {
 Indicate the previous or the next state of a variable in the current context. Used when describing state transitions.
 
 ```jsx
-function fetchPosts() {
+async function getPosts() {
   const prevPosts = this.state.posts
 
-  const fetchedPosts = fetch('...')
-  const nextPosts = concat(prevPosts, fetchedPosts)
+  const latestPosts = await fetch('...')
+  const nextPosts = concat(prevPosts, latestPosts)
 
   this.setState({ posts: nextPosts })
 }
