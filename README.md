@@ -4,9 +4,9 @@
   </a>
 </p>
 
-# Naming cheatsheet
+# Cheatsheet de nomeclatura
 
-- [English language](#english-language)
+- [Escreva em inglês](#escreva-em-inglês)
 - [Naming convention](#naming-convention)
 - [S-I-D](#s-i-d)
 - [Avoid contractions](#avoid-contractions)
@@ -21,25 +21,25 @@
 
 ---
 
-Naming things is hard. This sheet attempts to make it easier.
+Dar nome às coisas é uma tarefa difícil. Este documenta tenta tornar esta tarefa mais fácil.
 
-Although these suggestions can be applied to any programming language, I will use JavaScript to illustrate them in practice.
+Embora essas sugestões possam ser aplicadas a qualquer linguagem de programação, usarei JavaScript para ilustrá-las na prática.
 
-## English language
+## Escreva em inglês
 
-Use English language when naming your variables and functions.
+Nomeie suas variáveis e funções em inglês.
 
 ```js
-/* Bad */
-const primerNombre = 'Gustavo'
-const amigos = ['Kate', 'John']
+/* Ruim */
+const primeiroNome = 'Gustavo'
+const amigos = ['João', 'Raul']
 
-/* Good */
+/* Bom */
 const firstName = 'Gustavo'
-const friends = ['Kate', 'John']
+const friends = ['João', 'Raul']
 ```
 
-> Like it or not, English is the dominant language in programming: the syntax of all programming languages is written in English, as well as countless documentations and educational materials. By writing your code in English you dramatically increase its cohesiveness.
+> Goste ou não, o Inglês é a língua dominante na programação: a sintaxe de todas as linguagens de programação é escrita em Inglês, assim como inúmeras documentações e materiais educacionais. Ao escrever seu código em Inglês, você aumenta drasticamente sua coesão.
 
 ## Naming convention
 
