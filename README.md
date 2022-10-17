@@ -236,7 +236,7 @@ function deletePost(id) {
 
 > **`remove` or `delete`?**
 >
-> When the difference between `remove` and `delete` is not so obvious to you, I'd sugguest looking at their opposite actions - `add` and `create`.
+> When the difference between `remove` and `delete` is not so obvious to you, I'd suggest looking at their opposite actions - `add` and `create`.
 > The key difference between `add` and `create` is that `add` needs a destination while `create` **requires no destination**. You `add` an item _to somewhere_, but you don't "`create` it _to somewhere_".
 > Simply pair `remove` with `add` and `delete` with `create`.
 >
