@@ -4,6 +4,8 @@
   </a>
 </p>
 
+English | [Русский](./README-RU.md)
+
 # Naming cheatsheet
 
 - [English language](#english-language)
