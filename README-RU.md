@@ -63,7 +63,7 @@ const should_update = true
 
 ## S-I-D
 
-Имя должно быть _коротким_ (S), _интуитивно понятным_ (I) и _ёмким_ (D)
+Имя должно быть _коротким_ (S, _short_), _интуитивно понятным_ (I,  _intuitive_) и _ёмким_ (D, _descriptive_)
 
 - **Коротким**. Набор имени не должен занимать много времени и, следовательно, запоминаться;
 - **Интуитивно понятным**. Имя должно читаться естественно, как можно ближе к обычной речи;
@@ -242,11 +242,11 @@ function deletePost(id) {
 > Ключевое различие между `add` и `create` заключается в том, что `add` требует назначения, в то время как `create` **не требует назначения**. Вы `add` элемент _куда-то_, но вы не "`create` его _ куда-то_".
 > Просто соедините `remove` с `add` и `delete` с `create`.
 >
-> Подробно объяснено [here](https://github.com/kettanaito/naming-cheatsheet/issues/74#issue-1174942962).
+> Подробно объяснено [здесь](https://github.com/kettanaito/naming-cheatsheet/issues/74#issue-1174942962).
 
 ### `compose`
 
-Creates new data from the existing one. Mostly applicable to strings, objects, or functions.
+Создает новые данные из существующих. В основном применимо к строкам, объектам или функциям.
 
 ```js
 function composePageUrl(pageName, pageId) {
