@@ -161,6 +161,8 @@ function getFruitCount() {
 
 > See also [compose](#compose).
 
+### `fetch`
+
 You can use `fetch` when performing asynchronous operations as well:
 
 ```js
