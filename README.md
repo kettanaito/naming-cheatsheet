@@ -161,10 +161,12 @@ function getFruitCount() {
 
 > See also [compose](#compose).
 
-You can use `get` when performing asynchronous operations as well:
+### `fetch`
+
+You can use `fetch` when performing asynchronous operations as well:
 
 ```js
-async function getUser(id) {
+async function fetchUser(id) {
   const user = await fetch(`/api/user/${id}`)
   return user
 }
