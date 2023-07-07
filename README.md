@@ -373,3 +373,48 @@ const friend = ['Bob', 'Tony', 'Tanya']
 const friend = 'Bob'
 const friends = ['Bob', 'Tony', 'Tanya']
 ```
+
+## Use semantic constants or enumerations
+```js
+/* Bab */
+async function getPosts(status) {
+  const latestPosts = await fetch("/posts", { status }); 
+  return lastPosts;
+}
+// The number 2 here has lost its semantics, and nobody knows what it means
+getPosts(2).then(xxPosts => {
+  // You Don't know what to name the value you get
+});
+
+/* Good */
+/* Use enumerations to define an enumerated Post status */
+enum PostStatus {
+  Approved = "Approved",
+  Rejected = "Rejected",
+  Pending = "Pending",
+  Draft = "Draft",
+  Deleted = "Deleted",
+  Published = "Published",
+}
+async function getPosts(status: PostStatus = PostStatus.Approved) {
+  const latestPosts = await fetch("/posts", { status }); 
+  return lastPosts;
+}
+getPosts(PostStatus.Approved).then(approvedPosts => {});
+
+/* Good */
+/* You can use objects in Javascript to simulate the enumeration of TypeScript */
+const PostStatus = {
+  Approved: "Approved",
+  Rejected: "Rejected",
+  Pending: "Pending",
+  Draft: "Draft",
+  Deleted: "Deleted",
+  Published: "Published",
+};
+async function getPosts(status = PostStatus.Approved) {
+  const latestPosts = await fetch("/posts", { status }); 
+  return lastPosts;
+}
+getPosts(PostStatus.Approved).then(approvedPosts => {});
+```
