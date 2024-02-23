@@ -6,6 +6,18 @@
 
 # Naming cheatsheet
 
+
+wragwerg
+er
+ger
+gerq
+gergr
+er
+gger
+gre
+geqg
+qerga
+
 - [English language](#english-language)
 - [Naming convention](#naming-convention)
 - [S-I-D](#s-i-d)
