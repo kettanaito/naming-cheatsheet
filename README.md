@@ -4,34 +4,6 @@
   </a>
 </p>
 
-# Naming cheatsheet
-
-
-wragwerg
-er
-ger
-gerq
-gergr
-er
-gger
-gre
-geqg
-qerga
-
-- [English language](#english-language)
-- [Naming convention](#naming-convention)
-- [S-I-D](#s-i-d)
-- [Avoid contractions](#avoid-contractions)
-- [Avoid context duplication](#avoid-context-duplication)
-- [Reflect the expected result](#reflect-the-expected-result)
-- [Naming functions](#naming-functions)
-  - [A/HC/LC pattern](#ahclc-pattern)
-    - [Actions](#actions)
-    - [Context](#context)
-    - [Prefixes](#prefixes)
-- [Singular and Plurals](#singular-and-plurals)
-
----
 
 Naming things is hard. This sheet attempts to make it easier.
 
